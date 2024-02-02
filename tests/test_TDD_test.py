@@ -23,7 +23,7 @@ def test_empty_string_return_empty_string():
     assert result == ""
 
 """
-Given a string, return a string
+Given a string of 4, return string of 4
 """
 
 def test_return_string():
@@ -31,7 +31,15 @@ def test_return_string():
     assert result == "I like to party"
 
 """
-If string more than 5 words, add a ... to the end
+Given a string of 5, return string of 5
+"""
+
+def test_return_5():
+    result = make_snippet("I like to party like")
+    assert result == "I like to party like"
+
+"""
+Given string 7 words, return 5, add a ... to the end
 """
 
 def test_return_ellipsis_if_more_than_5_in_string():
@@ -46,3 +54,12 @@ don't add ellipsis
 def test_no_ellipsis_for_5_words():
     result = make_snippet("I like to party like")
     assert result == "I like to party like"
+
+"""
+If given string of 8 words delimted by commas
+return first 5 words with ellipsis
+"""
+
+def test_8_words_with_commas():
+    result = make_snippet("I, like, to, party, like, Andrew, WK")
+    assert result == "I like to party like..."
